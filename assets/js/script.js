@@ -172,11 +172,14 @@ function downloadResume() {
 }
 
 // Send Message
-document.getElementById("whatsapp-form").addEventListener("submit", function(event) {
+document
+  .getElementById("whatsapp-form")
+  .addEventListener("submit", function (event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
     const message = document.getElementById("message").value.trim();
+    const email = document.getElementById("email").value.trim();
 
     if (!name || !message) {
       alert("Please fill out both name and message.");
@@ -184,7 +187,9 @@ document.getElementById("whatsapp-form").addEventListener("submit", function(eve
     }
 
     const whatsappNumber = "6285817718838";
-    const fullMessage = `Halo Ahmad, saya ${name}. ${message}`;
+    const fullMessage = `Email: ${email},
+                         Name: ${name},
+                         Message: ${message}`;
     const encodedMessage = encodeURIComponent(fullMessage);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
