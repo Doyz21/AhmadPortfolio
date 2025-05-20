@@ -187,7 +187,7 @@ document
     }
 
     const whatsappNumber = "6285817718838";
-    const fullMessage = `📨 New Contact Message\n\nFull Name: ${name}\nEmail Address: ${email}\nMessage:\n${message}`;
+    const fullMessage = `📨 New Contact Message\n\nFull Name: ${name}\nEmail Address: ${email}\nMessage: ${message}`;
     const encodedMessage = encodeURIComponent(fullMessage);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
